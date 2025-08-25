@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatActivity">
+
+    <!-- RecyclerView takes all space above input bar -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fitsSystemWindows="true"
+        android:layout_above="@id/linearLayout"
+        android:layout_alignParentTop="true"
+        android:clipToPadding="false"
+        android:paddingTop="50dp"
+        android:paddingBottom="70dp"
+    android:scrollbars="vertical" />
+
+    <!-- Bottom input bar -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:fitsSystemWindows="true"
+        android:padding="5dp">
+
+        <EditText
+            android:id="@+id/messageBox"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/message_box_background"
+            android:hint="Type your message here"
+            android:paddingLeft="10dp" />
+
+        <ImageView
+            android:id="@+id/sentButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/send"
+            android:contentDescription="Send message"
+            android:layout_marginLeft="8dp"/>
+    </LinearLayout>
+</RelativeLayout>
